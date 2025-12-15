@@ -4,32 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udhës | Accomodations for you</title>
-    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="css/general.css">
 </head>
 <body>
+    <div class="header">
+        <div class="left-section">
+            <img src="images/udhes.png" id="logo">
+        </div>
 
+        <div class="middle-section">
+            <button class="middle-button" id="stays-button">
+                <img src="images/bed.svg" id="stays-icon">
+                <label>Stays</label>
+            </button>
+            <button class="middle-button" id="flights-button">
+                <img src="images/plane.svg" id="flights-icon"> Flights
+            </button>
+            <button class="middle-button" id="deals-button">
+                <img src="images/tag.svg" id="deals-icon"> Deals
+            </button>
+        </div>
 
-<div class="header">
-    <div class="left-section">
-        <img src="images/udhes.png" id="logo">
+        <div class="right-section">
+            <button class="login-button"><a href="html/login.html">Log In</a></button>
+        </div>
     </div>
+    <br><br>
 
-    <div class="middle-section">
-        <button class="middle-button">
-            <img src="images/bed.svg" id="stays-icon">
-            <label>Stays</label>
-        </button>
-        <button class="middle-button">
-            <img src="images/plane.svg" id="flights-icon"> Flights
-        </button>
-        <button class="middle-button">
-            <img src="images/tag.svg" id="deals-icon"> Deals
-        </button>
-    </div>
-
-    <div class="right-section">
-        <button class="login-button"><a href="login.html">Log In</a></button>
+   <div class="search-box">
+            <div class="search-field">
+                <label>Location</label>
+                <input type="text" id="locationInput" placeholder="Enter city or destination">
+            </div>
+            <div class="search-field">
+                <label>Check-in Date</label>
+                <input type="date" id="checkinInput">
+            </div>
+            <div class="search-field">
+                <label>Check-out Date</label>
+                <input type="date" id="checkoutInput">
+            </div>
+            <div class="search-field">
+                <label>Guests</label>
+                <input type="number" id="guestsInput" min="1" value="2">
+                </div>
+            <button class="search-button" onclick="searchProperties()">Search</button>
     </div>
 </div>
-</body> 
+
+    <!-- Simple image slideshow -->
+    <div class="slideshow-container">
+        <!-- Start with the first image; JavaScript will change it every 3 seconds -->
+        <img id="slideshow" src="images/turkiye.jpg" alt="Slideshow image">
+    </div>
+
+    <!-- Featured destinations -->
+    <section class="featured-section">
+        <h1 class="featured-title">Featured destinations</h1>
+
+        <div class="featured-grid">
+            <div class="featured-card">
+                <img src="images/vienna.jpg" alt="Vienna" class="featured-image">
+                <div class="featured-info">
+                    <h3>Vienna</h3>
+                    <p>Elegant streets, classical music, and cozy coffee houses in the heart of Europe.</p>
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <img src="images/london.jpg" alt="London" class="featured-image">
+                <div class="featured-info">
+                    <h3>London</h3>
+                    <p>Iconic landmarks, diverse neighborhoods, and endless things to see and do.</p>
+                </div>
+            </div>
+
+            <div class="featured-card">
+                <img src="images/tirana.jpg" alt="Tirana" class="featured-image">
+                <div class="featured-info">
+                    <h3>Tirana</h3>
+                    <p>Colorful streets, warm hospitality, and a lively café culture in Albania’s capital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="images/udhes.png" alt="Udhës logo" class="footer-logo">
+                <p class="footer-motto">Accommodations and stays tailored to your next journey.</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>Support</h2>
+                <p>Help Center</p>
+                <p>Safety information</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>Contact</h2>
+                <p>Email: support@udhes.com</p>
+                <p>Phone: +383 44 000 000</p>
+            </div>
+        </div>
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2025 Udhës. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
 </html>
