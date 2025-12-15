@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Udhës | Best Deals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/deals.css">
+</head>
+<body>
+
+<div class="header">
+        <div class="left-section">
+            <a href="home.html" style="text-decoration: none;"><img src="/images/udhes.png" id="logo" ></a>
+        </div>
+
+        <div class="middle-section">
+            <a href="home.html" style="text-decoration: none;">
+            <button class="middle-button" id="stays-button">
+                <img src="/images/bed.svg" id="stays-icon">
+                <label>Stays</label>
+            </button></a>
+            <a href="flights.html" style="text-decoration: none;">
+            <button class="middle-button" id="flights-button">
+                <img src="/images/plane.svg" id="flights-icon"> Flights
+            </button></a>
+            <a href="deals.html" style="text-decoration: none;">
+            <button class="middle-button" id="deals-button">
+                <img src="/images/tag.svg" id="deals-icon"> Deals
+            </button></a>
+        </div>
+
+        <div class="right-section">
+            <button class="login-button"><a href="/html/login.html">Log In</a></button>
+        </div>
+    </div>
+
+<br><br>
+
+<section class="featured-section">
+    <h1 class="featured-title">🔥 Exclusive Travel Deals</h1>
+    <p class="deals-intro">
+        Limited-time offers on hand-picked destinations.
+        Updated daily. Book early for the best prices.
+    </p>
+
+    <div class="controls">
+        <select id="filterCategory">
+            <option value="all">All categories</option>
+            <option value="city">City Break</option>
+            <option value="beach">Beach</option>
+        </select>
+
+        <select id="sortPrice">
+            <option value="default">Sort by</option>
+            <option value="low">Price: Low → High</option>
+            <option value="high">Price: High → Low</option>
+        </select>
+    </div>
+
+    <div id="dealsGrid" class="deals-grid"></div>
+</section>
+
+<section class="newsletter">
+    <h2>📩 Deal Alerts</h2>
+    <p>Get notified when new discounts drop.</p>
+    <div class="newsletter-box">
+        <input type="email" placeholder="Email address">
+        <button>Subscribe</button>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-bottom">
+        © 2025 Udhës. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>
