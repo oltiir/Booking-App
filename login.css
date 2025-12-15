@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container {
+    background: white;
+    padding: 45px 60px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field {
+    position: relative;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.field input {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    outline: none;
+}
+
+.field label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    transition: 0.2s ease;
+    background: white;
+    padding: 0 4px;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 12px;
+}
+
+.field input:focus + label {
+    color: #ff7f50;
+}
+
+.field input:focus {
+    transition: 0.2s;
+    border-color: #ff7f50;
+    box-shadow: 0 0 0 0.5px #ff7f50;
+
+}
+
+.login-button{
+    background-color: #ff7f50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    width: 333px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+.login-button:hover{
+    opacity: 0.85;
+}
+
+.login-button:active{
+    opacity: 0.6;
+}
+
+.signup-link {
+    font-size: 13px;
+    color: gray;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.signup-link a{
+    color:#ff7f50;
+    font-weight: bold;
+    text-decoration: none;
+} 
