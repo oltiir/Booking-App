@@ -291,7 +291,9 @@ body {
 .footer-section {
     flex: 1 1 160px;
 }
-
+.footer-section .contact-btn{
+    color: chocolate;
+}
 .featured-title {
     font-size: 20px;
 }
