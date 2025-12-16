@@ -106,8 +106,6 @@ function updateDeals() {
             return b.price - a.price;
         });
     }
-
     renderDeals(result);
 }
-
 renderDeals(deals);
