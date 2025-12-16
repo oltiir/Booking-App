@@ -21,6 +21,11 @@ body {
     align-items: center;
 }
 
+.auth-container #logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
 .field {
     position: relative;
     width: 300px;
