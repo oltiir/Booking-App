@@ -8,29 +8,38 @@
 </head>
 <body>
     <div class="container">
-    <div class="auth-container">
+    <div class="auth-container compact">
         <img src="/images/udhes.png" id="logo" >
         <h2>Create a new account</h2>
-        <form id="login-form">
+        <form id="signup-form" novalidate>
             <div class="field">
-                <input type="text" placeholder=" " id="email" required>
-                <label for="email">First Name</label>
+                <input type="text" placeholder=" " id="firstName" required>
+                <label for="firstName">First Name</label>
             </div>
             <div class="field">
-                <input type="text" placeholder=" " id="email" required>
-                <label for="email">Last Name</label>
+                <input type="text" placeholder=" " id="lastName" required>
+                <label for="lastName">Last Name</label>
             </div>
             <div class="field">
-                <input type="text" placeholder=" " id="email" required>
-                <label for="email">Email or phone</label>
+                <input type="email" placeholder=" " id="contact" required>
+                <label for="contact">Email or phone</label>
             </div>
             <div class="field">
-                <input type="password" placeholder=" " id="loginPassword" required>
-                <label for="email">Password</label>
+                <input type="email" placeholder=" " id="contactConfirm" required>
+                <label for="contactConfirm">Confirm Email or phone</label>
+            </div>
+            <div class="field">
+                <input type="password" placeholder=" " id="signupPassword" required>
+                <label for="signupPassword">Password</label>
+            </div>
+            <div class="field">
+                <input type="password" placeholder=" " id="signupPasswordConfirm" required>
+                <label for="signupPasswordConfirm">Confirm Password</label>
             </div>
             <button class="login-button" type="submit">
             Continue
             </button>
+            <p class="form-warning" id="formWarning"></p>
             <p class="signup-link">Already have an account? <a href="/html/login.html">Log in</a></p>
           <div class="social-login">
               <div class="social-label">Or continue with</div>
@@ -41,6 +50,7 @@
               </div>
           </div>
         </form>
+        <script src="/js/auth.js"></script>
     </div>
     </div>
 </body>
