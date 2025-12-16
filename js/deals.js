@@ -1,4 +1,4 @@
-const deals = [
+var deals = [
     {
         city: "Paris",
         category: "city",
@@ -16,7 +16,7 @@ const deals = [
         expires: Date.now() + 43200000
     },
     {
-        city: "Stanbul",
+        city: "Istanbul",
         category: "beach",
         price: 115,
         nights: 4,
@@ -25,62 +25,89 @@ const deals = [
     }
 ];
 
-const grid = document.getElementById("dealsGrid");
-const filter = document.getElementById("filterCategory");
-const sort = document.getElementById("sortPrice");
+var grid = document.getElementById("dealsGrid");
+var filter = document.getElementById("filterCategory");
+var sort = document.getElementById("sortPrice");
 
 function renderDeals(list) {
     grid.innerHTML = "";
-    list.forEach(d => {
-        grid.innerHTML += `
-        <div class="deal-card">
-            <img src="${d.img}" class="deal-image">
-            <div class="deal-body">
-                <h3>${d.city}</h3>
-                <div class="deal-meta">${d.nights} nights • Special offer</div>
 
-                <div class="deal-bottom">
-                    <div class="price">€${d.price}/night</div>
-                    <div class="wishlist">♡</div>
-                </div>
+    for (var i = 0; i < list.length; i++) {
+        var deal = list[i];
 
-                <div class="timer" data-exp="${d.expires}"></div>
-            </div>
-        </div>
-        `;
-    });
-    startTimers();
-}
+        var card = document.createElement("div");
+        card.className = "deal-card";
 
-function startTimers() {
-    document.querySelectorAll(".timer").forEach(t => {
-        const end = t.dataset.exp;
-        setInterval(() => {
-            const diff = end - Date.now();
-            if (diff <= 0) {
-                t.textContent = "Expired";
-                return;
-            }
-            const h = Math.floor(diff / 3600000);
-            const m = Math.floor((diff % 3600000) / 60000);
-            t.textContent = `⏳ ${h}h ${m}m left`;
-        }, 1000);
-    });
-}
+        card.innerHTML =
+            '<img src="' + deal.img + '" class="deal-image">' +
+            '<div class="deal-body">' +
+                '<h3>' + deal.city + '</h3>' +
+                '<div class="deal-meta">' + deal.nights + ' nights • Special offer</div>' +
+                '<div class="deal-bottom">' +
+                    '<div class="price">€' + deal.price + '/night</div>' +
+                    '<div class="wishlist">♡</div>' +
+                '</div>' +
+                '<div class="timer"></div>' +
+            '</div>';
 
-filter.onchange = () => {
-    let result = [...deals];
-    if (filter.value !== "all") {
-        result = result.filter(d => d.category === filter.value);
+        grid.appendChild(card);
+
+        startTimer(card.querySelector(".timer"), deal.expires);
+        attachWishlist(card.querySelector(".wishlist"));
     }
-    renderDeals(result);
-};
+}
 
-sort.onchange = () => {
-    let result = [...deals];
-    if (sort.value === "low") result.sort((a,b) => a.price - b.price);
-    if (sort.value === "high") result.sort((a,b) => b.price - a.price);
+function attachWishlist(el) {
+    el.onclick = function () {
+        if (el.textContent === "♡") {
+            el.textContent = "❤️";
+        } else {
+            el.textContent = "♡";
+        }
+    };
+}
+
+function startTimer(timerEl, endTime) {
+    setInterval(function () {
+        var diff = endTime - Date.now();
+
+        if (diff <= 0) {
+            timerEl.textContent = "Expired";
+            return;
+        }
+
+        var hours = Math.floor(diff / 3600000);
+        var minutes = Math.floor((diff % 3600000) / 60000);
+
+        timerEl.textContent = "⏳ " + hours + "h " + minutes + "m left";
+    }, 1000);
+}
+
+filter.onchange = updateDeals;
+sort.onchange = updateDeals;
+
+function updateDeals() {
+    var result = [];
+
+    for (var i = 0; i < deals.length; i++) {
+        if (filter.value === "all" || deals[i].category === filter.value) {
+            result.push(deals[i]);
+        }
+    }
+
+    if (sort.value === "low") {
+        result.sort(function (a, b) {
+            return a.price - b.price;
+        });
+    }
+
+    if (sort.value === "high") {
+        result.sort(function (a, b) {
+            return b.price - a.price;
+        });
+    }
+
     renderDeals(result);
-};
+}
 
 renderDeals(deals);
