@@ -1,10 +1,10 @@
 // Simple list of image paths for the slideshow
 var images = [
-    "images/turkiye.jpg",
-    "images/paris.jpg",
-    "images/switzerland.jpg",
-    "images/slovenia.jpg",
-    "images/italy.jpg"
+    "/images/turkiye.jpg",
+    "/images/paris.jpg",
+    "/images/switzerland.jpg",
+    "/images/slovenia.jpg",
+    "/images/italy.jpg"
 ];
 
 // Start from the first image (index 0)
