@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udhës | Accomodations for you</title>
     <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/stays.css">
+    <link rel="stylesheet" href="/css/flights.css">
 </head>
 <body>
     <div class="header">
@@ -33,38 +33,54 @@
             <a href="/html/login.html" class="login-button" >Log In</a>
         </div>
     </div>
-</div>
 
-    <div class="slideshow-container">
+   <div class="photo-container">
         <div class="inner-container">
             <div class="intro-text">
                 <h1>Start your adventure with us!</h1>
                 <p>Where are you headed this time?</p>
             </div>
+            <div class="radio-buttons-group">
+                <div class="radio-buttons">
+                <input type="radio" id="one-way">
+                <label>One-way</label>
+            </div>
+            <div class="radio-buttons">
+                <input type="radio" id="round-trip"> 
+                <label>Round-trip</label>
+            </div>
+            </div>
             <div class="search-box">
-                <div class="search-field" id="location-field">
-                    <label>Location</label>
-                    <input type="text" id="locationInput" placeholder="Enter city or destination">
+                <div class="search-field" id="from">
+                    <label>From</label>
+                    <input type="text" id="locationInput" placeholder="Enter Departure">
+                </div>
+                <div class="two-way">
+                    <img src="/images/two-way.png">
                 </div>
                 <div class="search-field">
-                    <label>Check-in Date</label>
+                    <label>To</label>
+                    <input type="text" id="locationInput" placeholder="Enter Destination">
+                </div>
+                <div class="search-field">
+                    <label>Departure Date</label>
                     <input type="date" id="checkinInput">
                 </div>
                 <div class="search-field">
-                    <label>Check-out Date</label>
+                    <label>Return Date</label>
                     <input type="date" id="checkoutInput">
                 </div>
                 <div class="search-field">
-                    <label>Guests</label>
+                    <label>Travelers</label>
                     <input type="number" id="guestsInput" min="1" value="2" size="5">
-                    </div>
+                </div>
                 <button class="search-button" onclick="searchProperties()">Search</button>
             </div>
-        </div> 
+        </div>
     </div>
 
     <section class="featured-section">
-        <h2 class="featured-title">Featured destinations</h2>
+        <h1 class="featured-title">Featured destinations</h1>
 
         <div class="featured-grid">
             <div class="featured-card">
@@ -93,7 +109,7 @@
         </div>
     </section>
 
-    
+    <!-- Page footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-brand">
@@ -102,13 +118,13 @@
             </div>
 
             <div class="footer-section">
-                <a href="/html/contact.html" style="text-decoration: none;"><h2>Support</h2></a>
+                <h2>Support</h2>
                 <p>Help Center</p>
                 <p>Safety information</p>
             </div>
 
             <div class="footer-section">
-                <a href="/html/contact.html"  class="contact-btn" style="text-decoration: none;"><h2>Contact Us Here</h2></a>
+                <h2>Contact</h2>
                 <p>Email: support@udhes.com</p>
                 <p>Phone: +383 45 000 000</p>
             </div>
@@ -119,6 +135,8 @@
             <p>© 2025 Udhës. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="/js/script.js"></script>
 
 </body>
 </html>
