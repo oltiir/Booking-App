@@ -9,24 +9,27 @@
 <body>
     <div class="header">
         <div class="left-section">
-            <img src="images/udhes.png" id="logo">
+            <a href="home.html" style="text-decoration: none;"><img src="/images/udhes.png" id="logo" ></a>
         </div>
 
         <div class="middle-section">
+            <a href="home.html" style="text-decoration: none;">
             <button class="middle-button" id="stays-button">
                 <img src="/images/bed.svg" id="stays-icon">
                 <label>Stays</label>
-            </button>
+            </button></a>
+            <a href="flights.html" style="text-decoration: none;">
             <button class="middle-button" id="flights-button">
                 <img src="/images/plane.svg" id="flights-icon"> Flights
-            </button>
+            </button></a>
+            <a href="deals.html" style="text-decoration: none;">
             <button class="middle-button" id="deals-button">
                 <img src="/images/tag.svg" id="deals-icon"> Deals
-            </button>
+            </button></a>
         </div>
 
         <div class="right-section">
-            <button class="login-button"><a href="/html/login.html">Log In</a></button>
+            <a href="/html/login.html" class="login-button" >Log In</a>
         </div>
     </div>
     <br><br>
@@ -52,13 +55,11 @@
     </div>
 </div>
 
-    <!-- Simple image slideshow -->
-    <div class="slideshow-container">
-        <!-- Start with the first image; JavaScript will change it every 3 seconds -->
-        <img id="slideshow" src="/images/turkiye.jpg" alt="Slideshow image">
+    <div class="slideshow-container"> 
+        <img id="slideshow" src="/images/turkiye.jpg" alt="Slideshow image"> 
+        <h1 class="slideshow-title">Start Your Adventure</h1> 
     </div>
 
-    <!-- Featured destinations -->
     <section class="featured-section">
         <h1 class="featured-title">Featured destinations</h1>
 

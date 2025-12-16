@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Udhës | Best Deals</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/deals.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="left-section">
+        <a href="home.html"><img src="/images/udhes.png" id="logo"></a>
+    </div>
+
+    <div class="middle-section">
+        <a href="home.html">
+            <button class="middle-button" id="stys-button">
+                <img src="/images/bed.svg" id="stays-icon">
+                Stays
+            </button>
+        </a>
+        <a href="flights.html">
+            <button class="middle-button" id="flights-button">
+                <img src="/images/plane.svg" id="flights-icon">
+                Flights
+            </button>
+        </a>
+        <a href="deals.html">
+            <button class="middle-button" id="deals-button" style="box-shadow:0 0 0 2px #ff7f50;">
+                <img src="/images/tag.svg" id="deals-icon">
+                Deals
+            </button>
+        </a>
+    </div>
+
+    <div class="right-section">
+        <a href="/html/login.html" class="login-button">Log In</a>
+    </div>
+</div>
+
+<section class="featured-section intro-section">
+    <h1 class="featured-title">🔥 Exclusive Travel Deals</h1>
+    <p class="deals-intro">
+        Limited-time offers on hand-picked destinations.
+        Updated daily. Book early for the best prices.
+    </p>
+</section>
+
+<section class="slideshow-container">
+    <img src="/images/switzerland.jpg" id="slideshow" alt="Travel deals banner">
+</section>
+
+<section class="featured-section">
+    <div style="display:flex; gap:40px; flex-wrap:wrap; text-align:center;">
+        <div>
+            <h2>10,000+</h2>
+            <p>Happy travelers</p>
+        </div>
+        <div>
+            <h2>500+</h2>
+            <p>Verified deals</p>
+        </div>
+        <div>
+            <h2>30+</h2>
+            <p>Countries covered</p>
+        </div>
+        <div>
+            <h2>24/7</h2>
+            <p>Customer support</p>
+        </div>
+    </div>
+</section>
+
+<section class="featured-section">
+    <h2>Find the Best Deal for You</h2>
+
+    <div class="controls">
+        <select id="filterCategory">
+            <option value="all">All categories</option>
+            <option value="city">City Break</option>
+            <option value="beach">Beach</option>
+        </select>
+
+        <select id="sortPrice">
+            <option value="default">Sort by</option>
+            <option value="low">Price: Low → High</option>
+            <option value="high">Price: High → Low</option>
+        </select>
+    </div>
+
+    <div id="dealsGrid" class="deals-grid"></div>
+</section>
+
+<section class="featured-section">
+    <h2>Popular Deal Types</h2>
+
+    <div class="featured-grid">
+        <div class="featured-card">
+            <img src="/images/city.jpg" class="featured-image">
+            <div class="featured-info">
+                <h3>City Breaks</h3>
+                <p>Short stays in Europe’s most exciting cities.</p>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="/images/beach.jpg" class="featured-image">
+            <div class="featured-info">
+                <h3>Beach Escapes</h3>
+                <p>Sun, sea, and relaxation at discounted prices.</p>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <img src="/images/lastminute.jpg" class="featured-image">
+            <div class="featured-info">
+                <h3>Last-Minute Deals</h3>
+                <p>Big discounts for spontaneous travelers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="featured-section seasonal-bars">
+    <h2 class="seasonal-title">🍂 Seasonal Offers</h2>
+    <p class="seasonal-subtitle">
+        Carefully curated deals for the best time to travel.
+    </p>
+
+    <div class="seasonal-row">
+        <div class="season-bar">
+            <div class="season-text">
+                <h3>Summer Escapes</h3>
+                <p>Beach resorts and islands with up to 35% off.</p>
+            </div>
+            <button class="season-btn">Learn more</button>
+        </div>
+
+        <div class="season-bar">
+            <div class="season-text">
+                <h3>Spring City Breaks</h3>
+                <p>Flexible bookings with free cancellation.</p>
+            </div>
+            <button class="season-btn">Learn more</button>
+        </div>
+
+        <div class="season-bar">
+            <div class="season-text">
+                <h3>Winter Wellness</h3>
+                <p>Spa hotels, mountain retreats, and cozy stays.</p>
+            </div>
+            <button class="season-btn">Learn more</button>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="featured-section" style="background:#fff3ee; border-radius:16px;">
+    <h2>⏳ Last-Minute Deals</h2>
+    <p style="color:#666;">
+        These deals expire soon. Prices may increase at any time.
+    </p>
+    <p style="font-weight:bold; color:#ff7f50;">
+        Average savings: 20–40%
+    </p>
+</section>
+
+<section class="featured-section how-it-works">
+    <h2>How Udhës Deals Work</h2>
+
+    <div class="steps">
+        <div>
+            <strong>01</strong>
+            <p>We negotiate exclusive prices with trusted partners.</p>
+        </div>
+
+        <div>
+            <strong>02</strong>
+            <p>Each deal is verified using ratings and reviews.</p>
+        </div>
+
+        <div>
+            <strong>03</strong>
+            <p>You book securely with transparent pricing.</p>
+        </div>
+
+        <div>
+            <strong>04</strong>
+            <p>You save money without sacrificing comfort.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="featured-section">
+    <h2>What Travelers Say</h2>
+
+    <div class="featured-grid">
+        <div class="featured-card">
+            <div class="featured-info">
+                <img src="/images/person3.jpg" alt="">
+                <p>“Saved over €200 on a Rome trip. Smooth and simple booking.”</p>
+                <strong>- Arber K.</strong>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <div class="featured-info">
+                <img src="/images/person2.jpg" alt="">
+                <p>“Perfect for spontaneous travel. Found a deal in minutes.”</p>
+                <strong>- Elira M.</strong>
+            </div>
+        </div>
+
+        <div class="featured-card">
+            <div class="featured-info">
+                <img src="/images/person1.jpg" alt="">
+                <p>“Clean UI, honest prices, no surprises.”</p>
+                <strong>- Daniel R.</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="newsletter">
+    <h2>📩 Deal Alerts</h2>
+    <p>Get notified when new discounts drop.</p>
+    <div class="newsletter-box">
+        <input type="email" placeholder="Email address">
+        <button class="login-button"> Subscribe</button>
+    </div>
+</section>
+
+<section class="featured-section" style="text-align:center;">
+    <h2>Ready to book your next trip?</h2>
+    <p style="color:#666;">Explore exclusive deals before they’re gone.</p>
+    <a href="login.html" class="login-button">Start With Us</a>
+</section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="/images/udhes.png" alt="Udhës logo" class="footer-logo">
+                <p class="footer-motto">Accommodations and stays tailored to your next journey.</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>Support</h2>
+                <p>Help Center</p>
+                <p>Safety information</p>
+            </div>
+
+            <div class="footer-section">
+                <h2>Contact</h2>
+                <p>Email: support@udhes.com</p>
+                <p>Phone: +383 45 000 000</p>
+            </div>
+        </div>
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2025 Udhës. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="/js/deals.js"></script>
+</body>
+</html>
