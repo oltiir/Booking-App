@@ -53,3 +53,21 @@
 .intro-text {
     margin-bottom: 46px;
 }
+
+.featured-section {
+    max-width: 1200px;
+    margin: 48px auto;
+    padding: 0 30px;
+}
+
+.featured-section[style*="background:#fff3ee"] {
+    padding: 24px;
+}
+
+.featured-section > div[style*="display:flex"] {
+    justify-content: center;
+}
+
+.featured-section > div[style*="display:flex"] > div {
+    min-width: 160px;
+}
