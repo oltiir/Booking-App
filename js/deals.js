@@ -4,7 +4,7 @@ var deals = [
         category: "city",
         price: 129,
         nights: 4,
-        img: "/images/paris.jpg",
+        img: "/images/paris2.jpg",
         expires: Date.now() + 86400000
     },
     {
@@ -20,7 +20,7 @@ var deals = [
         category: "beach",
         price: 115,
         nights: 4,
-        img: "/images/turkiye.jpg",
+        img: "/images/istanbul.jpg",
         expires: Date.now() + 65000000
     }
 ];
