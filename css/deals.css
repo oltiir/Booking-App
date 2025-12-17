@@ -343,3 +343,10 @@ a {
     display: block;
     text-align: center;
 }
+
+.featured-section p {
+    margin: 25px;
+    font-size: 16px;
+    color: #666666;
+    text-align: center;
+}

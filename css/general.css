@@ -227,16 +227,14 @@ body {
 }
 
 .featured-section p {
-    margin: 25px;
-    font-size: 16px;
-    color: #666666;
-    text-align: center;
+    font-size: 14px;
+    color: #595959;
 }
 
 .deals-title a {
     margin: 0;
     font-size: 16px;
-    color: #666666;
+    color: #595959;
     text-decoration: none;
 }
 
