@@ -226,11 +226,29 @@ body {
     font-size: 18px;
 }
 
-.featured-info p {
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-size: 14px;
+.featured-section p {
+    margin: 25px;
+    font-size: 16px;
     color: #666666;
+    text-align: center;
+}
+
+.deals-title a {
+    margin: 0;
+    font-size: 16px;
+    color: #666666;
+    text-decoration: none;
+}
+
+.deals-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.price {
+    color:#ff7f50;
+    margin: 10px 0 0 0;
 }
 
 .featured-grid {
