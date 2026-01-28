@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Log In</title>  
-  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>  
 <div class="container">
   <div class="auth-container">
-    <img src="/images/udhes.png" id="logo" >
+    <img src="../images/udhes.png" id="logo" >
     <h2>Log in to your account</h2>
     <form id="login-form">
         <div class="field">
@@ -24,20 +24,20 @@
           Log in
         </button>
         <p class="form-warning" id="formWarning"></p>
-        <p class="signup-link">Don't have an account? <a href="/html/signup.html">Sign up here</a></p>
+        <p class="signup-link">Don't have an account? <a href="../html/signup.php">Sign up here</a></p>
           <div class="social-login">
               <div class="social-label">Or continue with</div>
               <div class="social-row">
-                  <button type="button" class="social-btn google" aria-label="Continue with Google"><img src="/images/google.png" alt="Google"></button>
-                  <button type="button" class="social-btn apple" aria-label="Continue with Apple"><img src="/images/apple.jpg" alt="Apple"></button>
-                  <button type="button" class="social-btn x" aria-label="Continue with X"><img src="/images/x.png" alt="X"></button>
+                  <button type="button" class="social-btn google" aria-label="Continue with Google"><img src="../images/google.png" alt="Google"></button>
+                  <button type="button" class="social-btn apple" aria-label="Continue with Apple"><img src="../images/apple.jpg" alt="Apple"></button>
+                  <button type="button" class="social-btn x" aria-label="Continue with X"><img src="../images/x.png" alt="X"></button>
               </div>
           </div>
     </form>
   </div>
 </div>
 
-  <script src="/js/auth.js"></script>
+  <script src="../js/auth.js"></script>
 
   </body>
   </html>

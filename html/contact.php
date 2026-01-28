@@ -5,40 +5,40 @@
     <title>Udhës | Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/deals.css">
-    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/deals.css">
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
 
 <div class="header">
     <div class="left-section">
-        <a href="home.html"><img src="/images/udhes.png" id="logo"></a>
+        <a href="../html/home.php"><img src="../images/udhes.png" id="logo"></a>
     </div>
 
     <div class="middle-section">
-        <a href="home.html">
+        <a href="home.php">
             <button class="middle-button" id="stys-button">
-                <img src="/images/bed.svg" id="stays-icon">
+                <img src="../images/bed.svg" id="stays-icon">
                 Stays
             </button>
         </a>
-        <a href="flights.html">
+        <a href="flights.php">
             <button class="middle-button" id="flights-button">
-                <img src="/images/plane.svg" id="flights-icon">
+                <img src="../images/plane.svg" id="flights-icon">
                 Flights
             </button>
         </a>
-        <a href="deals.html">
+        <a href="deals.php">
             <button class="middle-button" id="deas-button">
-                <img src="/images/tag.svg" id="deals-icon">
+                <img src="../images/tag.svg" id="deals-icon">
                 Deals
             </button>
         </a>
     </div>
 
     <div class="right-section">
-        <a href="/html/login.html" class="login-button">Log In</a>
+        <a href="../html/login.php" class="login-button">Log In</a>
     </div>
 </div>
 
@@ -86,7 +86,7 @@
         </div>
 
         <div class="card map-card">
-            <img src="/images/map.png" alt="our location map" class="map-image">
+            <img src="../images/map.png" alt="our location map" class="map-image">
         </div>
 
         <div class="card">
@@ -149,18 +149,18 @@
 <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-brand">
-            <img src="/images/udhes.png" alt="Udhës logo" class="footer-logo">
+            <img src="../images/udhes.png" alt="Udhës logo" class="footer-logo">
             <p class="footer-motto">Accommodations and stays tailored to your next journey.</p>
         </div>
 
         <div class="footer-section">
-            <a href="/html/contact.html"><h2>Support</h2></a>
+            <a href="../html/contact.php"><h2>Support</h2></a>
             <p>Help Center</p>
             <p>Safety information</p>
         </div>
 
         <div class="footer-section">
-            <a href="/html/contact.html"  class="contact-btn"><h2>Contact Us Here</h2></a>
+            <a href="../html/contact.php"  class="contact-btn"><h2>Contact Us Here</h2></a>
             <p>Email: support@udhes.com</p>
             <p>Phone: +383 45 000 000</p>
             
@@ -173,7 +173,7 @@
     </div>
 </footer>
 
-<script src="/js/contact.js"></script>
+<script src="../js/contact.js"></script>
 
 </body>
 </html>
