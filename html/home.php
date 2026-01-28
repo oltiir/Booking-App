@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+// Temporary test: show if logged in or not
+if (isset($_SESSION['user_id'])) {
+    echo "<p style='color:green; text-align:center;'>Logged in as: " . htmlspecialchars($_SESSION['email'] ?? 'Unknown') . "</p>";
+} else {
+    echo "<p style='color:red; text-align:center;'>Not logged in yet</p>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
