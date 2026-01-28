@@ -1,3 +1,27 @@
+<?php
+session_start();
+include_once '../includes/Database.php';
+include_once '../classes/User.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    // Merr të dhënat nga forma jote
+    $email    = $_POST['email']         ?? '';
+    $password = $_POST['loginPassword'] ?? '';
+
+    // Login (kod i mësuesit)
+    if ($user->login($email, $password)) {
+        header("Location: home.php");
+        exit;
+    } else {
+        echo "<p style='color:red; text-align:center;'>Invalid login credentials!</p>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +35,7 @@
   <div class="auth-container">
     <img src="../images/udhes.png" id="logo" >
     <h2>Log in to your account</h2>
-    <form id="login-form">
+    <form id="login-form" method="POST" action="">
         <div class="field">
             <input type="email" placeholder=" " id="email" required>
             <label for="email">Email or phone</label>

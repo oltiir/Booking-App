@@ -1,3 +1,29 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);  // force errors to show in browser
+
+include_once __DIR__ . '/../includes/Database.php';
+include_once __DIR__ . '/../classes/User.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    $name     = $_POST['firstName']     ?? '';
+    $surname  = $_POST['lastName']      ?? '';
+    $email    = $_POST['contact']       ?? '';
+    $password = $_POST['signupPassword'] ?? '';
+
+    if ($user->register($name, $surname, $email, $password)) {
+        header("Location: login.php");  // redirects to login on success
+        exit;
+    } else {
+        echo "<p style='color:red; text-align:center;'>Error registering user! (Email may exist or DB issue)</p>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +37,7 @@
     <div class="auth-container compact">
         <img src="../images/udhes.png" id="logo" >
         <h2>Create a new account</h2>
-        <form id="signup-form" novalidate>
+        <form id="signup-form" method="POST" action="" novalidate>
             <div class="field">
                 <input type="text" placeholder=" " id="firstName" required>
                 <label for="firstName">First Name</label>
@@ -50,7 +76,7 @@
               </div>
           </div>
         </form>
-        <script src="../js/auth.js"></script>
+       <! <script src="../js/auth.js"></script>
     </div>
     </div>
 </body>
