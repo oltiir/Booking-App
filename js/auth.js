@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
-            alert("Login successful!!");
-            clearForm("login-form");
+            this.submit();
         });
     }
 
@@ -98,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             alert("Signup successful!!");
-            clearForm("signup-form");
+            this.submit();
         });
     }
 

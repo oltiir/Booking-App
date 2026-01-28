@@ -8,13 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $connection = $db->getConnection();
     $user = new User($connection);
 
-    // Merr të dhënat nga forma jote
     $email    = $_POST['email']         ?? '';
-    $password = $_POST['loginPassword'] ?? '';
+    $password = $_POST['loginPassword'] ?? ''; 
 
-    // Login (kod i mësuesit)
+
     if ($user->login($email, $password)) {
-        header("Location: home.php");
+        // Successful login!
+        if ($_SESSION['role'] === 'admin') {
+            header("Location: dashboard.php");
+        } else {
+            header("Location: home.php");
+        }
         exit;
     } else {
         echo "<p style='color:red; text-align:center;'>Invalid login credentials!</p>";
@@ -37,12 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2>Log in to your account</h2>
     <form id="login-form" method="POST" action="">
         <div class="field">
-            <input type="email" placeholder=" " id="email" required>
+            <input type="email" name="email" id="email" placeholder=" " required>
             <label for="email">Email or phone</label>
         </div>
         <div class="field">
-            <input type="password" placeholder=" " id="loginPassword" required>
-            <label for="email">Password</label>
+            <input type="password" name="loginPassword" id="loginPassword" placeholder=" " required>
+            <label for="loginPassword">Password</label>
         </div>
         <button class="login-button" type="submit">
           Log in
