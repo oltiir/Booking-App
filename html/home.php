@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="left-section">
-            <a href="home.html" style="text-decoration: none;"><img src="../images/udhes.png" id="logo" ></a>
+            <a href="home.php" style="text-decoration: none;"><img src="../images/udhes.png" id="logo" ></a>
         </div>
 
         <div class="middle-section">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="right-section">
-            <a href="../html/login.html" class="login-button" >Log In</a>
+            <a href="../html/login.php" class="login-button" >Log In</a>
         </div>
     </div>
 </div>
@@ -126,7 +126,7 @@
     <section class="featured-section">
         <div class="deals-title">
             <h2 class="deals-title">Hot Deals for You</h2>
-            <a href="/html/deals.html">See more...</a>
+            <a href="../html/deals.php">See more...</a>
         </div>
 
         <div class="featured-grid">
@@ -164,13 +164,13 @@
             </div>
 
             <div class="footer-section">
-                <a href="/html/contact.html" style="text-decoration: none;"><h2>Support</h2></a>
+                <a href="../html/contact.php" style="text-decoration: none;"><h2>Support</h2></a>
                 <p>Help Center</p>
                 <p>Safety information</p>
             </div>
 
             <div class="footer-section">
-                <a href="../html/contact.html"  class="contact-btn" style="text-decoration: none;"><h2>Contact Us Here</h2></a>
+                <a href="../html/contact.php"  class="contact-btn" style="text-decoration: none;"><h2>Contact Us Here</h2></a>
                 <p>Email: support@udhes.com</p>
                 <p>Phone: +383 45 000 000</p>
             </div>

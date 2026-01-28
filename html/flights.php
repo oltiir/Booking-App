@@ -30,7 +30,7 @@
         </div>
 
         <div class="right-section">
-            <a href="/html/login.php" class="login-button" >Log In</a>
+            <a href="../html/login.php" class="login-button" >Log In</a>
         </div>
     </div>
 
@@ -142,7 +142,7 @@
     <section class="featured-section">
         <div class="deals-title">
             <h2 class="deals-title">Hot Deals for You</h2>
-            <a href="/html/deals.php">See more...</a>
+            <a href="../html/deals.php">See more...</a>
         </div>
 
         <div class="featured-grid">
