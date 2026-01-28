@@ -11,7 +11,7 @@
     height: 650px;
     overflow: hidden;  
     position: relative;
-    background-image: url(/images/turkiye.jpg);
+    background-image: url(../images/turkiye.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,23 +21,23 @@
 
 @keyframes slide {
     20% {
-        background-image: url(/images/paris.jpg);
+        background-image: url(../images/paris.jpg);
     }
     
     40% {
-        background-image: url(/images/switzerland.jpg);
+        background-image: url(../images/switzerland.jpg);
     }
 
     60% {
-        background-image: url(/images/slovenia.jpg);
+        background-image: url(../images/slovenia.jpg);
     }
 
     80% {
-        background-image: url(/images/italy.jpg);
+        background-image: url(../images/italy.jpg);
     }
 
     100% {
-        background-image: url(/images/turkiye.jpg);
+        background-image: url(../images/turkiye.jpg);
     }
 }
 
