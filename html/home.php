@@ -160,7 +160,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <img src="/images/udhes.png" alt="Udhës logo" class="footer-logo">
-                <p class="footer-motto">Accommodations and stays tailored to your next journey.</p>
+                <p class="footer-motto">Accommodations and stays tailored to your next journey!</p>
             </div>
 
             <div class="footer-section">
