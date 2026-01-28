@@ -8,15 +8,18 @@ class User {
     }
 
     public function register($name, $surname, $email, $password) {
-    $role = 'user';  
+    $role = 'user';
     $query = "INSERT INTO {$this->table_name} (name, surname, email, password, role) VALUES (:name, :surname, :email, :password, :role)";
     $stmt = $this->conn->prepare($query);
 
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':surname', $surname);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
-    $stmt->bindParam(':role', $role); 
+
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
+    $stmt->bindParam(':password', $hashed);
+
+    $stmt->bindParam(':role', $role);
 
     if ($stmt->execute()) {
         return true;

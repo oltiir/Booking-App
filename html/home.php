@@ -1,7 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['user_id'])) {
-    echo "<p style='color:green; text-align:center;'>Mirë se erdhe, " . htmlspecialchars($_SESSION['name'] ?? '') . "!</p>";
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
 }
 ?>
 

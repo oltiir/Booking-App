@@ -167,7 +167,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-image: url(/images/search-icon.svg);
+    background-image: url(../images/search-icon.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 25px 25px;
