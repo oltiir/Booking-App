@@ -11,7 +11,7 @@
     height: 650px;
     overflow: hidden;  
     position: relative;
-    background-image: url(/images/plane.jpg);
+    background-image: url(../images/plane.jpg);
     background-position: center;
     background-size: cover;
 }

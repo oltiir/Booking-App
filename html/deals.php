@@ -5,44 +5,44 @@
     <title>Udhës | Best Deals</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/deals.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/deals.css">
 </head>
 <body>
 
 <div class="header">
     <div class="left-section">
-        <a href="home.html"><img src="/images/udhes.png" id="logo"></a>
+        <a href="home.php"><img src="../images/udhes.png" id="logo"></a>
     </div>
 
     <div class="middle-section">
-        <a href="home.html">
+        <a href="home.php">
             <button class="middle-button" id="stys-button">
-                <img src="/images/bed.svg" id="stays-icon">
+                <img src="../images/bed.svg" id="stays-icon">
                 Stays
             </button>
         </a>
-        <a href="flights.html">
+        <a href="flights.php">
             <button class="middle-button" id="flights-button">
-                <img src="/images/plane.svg" id="flights-icon">
+                <img src="../images/plane.svg" id="flights-icon">
                 Flights
             </button>
         </a>
-        <a href="deals.html">
+        <a href="deals.php">
             <button class="middle-button" id="deals-button" style="box-shadow:0 0 0 2px #ff7f50;">
-                <img src="/images/tag.svg" id="deals-icon">
+                <img src="../images/tag.svg" id="deals-icon">
                 Deals
             </button>
         </a>
     </div>
 
     <div class="right-section">
-        <a href="/html/login.html" class="login-button">Log In</a>
+        <a href="../html/login.php" class="login-button">Log In</a>
     </div>
 </div>
 
 <section class="slideshow-container">
-    <img src="/images/switzerland.jpg" id="slideshow" alt="Travel deals banner">
+    <img src="../images/switzerland.jpg" id="slideshow" alt="Travel deals banner">
     <div class="featured-title">
        <h1 class="title">Exclusive Travel Deals</h1>
         <p class="deals-intro">
@@ -169,7 +169,7 @@
     <div class="featured-grid">
         <div class="featured-card">
             <div class="featured-info">
-                <img src="/images/person3.jpg" alt="">
+                <img src="../images/person3.jpg" alt="">
                 <p>“Saved over €200 on a Rome trip. Smooth and simple booking.”</p>
                 <strong>- Arber K.</strong>
             </div>
@@ -177,7 +177,7 @@
 
         <div class="featured-card">
             <div class="featured-info">
-                <img src="/images/person2.jpg" alt="">
+                <img src="../images/person2.jpg" alt="">
                 <p>“Perfect for spontaneous travel. Found a deal in minutes.”</p>
                 <strong>- Elira M.</strong>
             </div>
@@ -185,7 +185,7 @@
 
         <div class="featured-card">
             <div class="featured-info">
-                <img src="/images/person1.jpg" alt="">
+                <img src="../images/person1.jpg" alt="">
                 <p>“Clean UI, honest prices, no surprises.”</p>
                 <strong>- Daniel R.</strong>
             </div>
@@ -206,24 +206,24 @@
 <section class="featured-section" style="text-align:center;">
     <h2>Ready to book your next trip?</h2>
     <p style="color:#666;">Explore exclusive deals before they're gone.</p>
-    <a href="login.html" class="login-button">Start With Us</a>
+    <a href="login.php" class="login-button">Start With Us</a>
 </section>
 
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="/images/udhes.png" alt="Udhës logo" class="footer-logo">
+                <img src="../images/udhes.png" alt="Udhës logo" class="footer-logo">
                 <p class="footer-motto">Accommodations and stays tailored to your next journey.</p>
             </div>
 
             <div class="footer-section">
-                <a href="/html/contact.html"><h2>Support</h2></a>
+                <a href="../html/contact.php"><h2>Support</h2></a>
                 <p>Help Center</p>
                 <p>Safety information</p>
             </div>
 
             <div class="footer-section">
-                <a href="/html/contact.html"  class="contact-btn"><h2>Contact Us Here</h2></a>
+                <a href="../html/contact.php"  class="contact-btn"><h2>Contact Us Here</h2></a>
                 <p>Email: support@udhes.com</p>
                 <p>Phone: +383 45 000 000</p>
             </div>
@@ -235,6 +235,6 @@
         </div>
     </footer>
 
-<script src="/js/deals.js"></script>
+<script src="../js/deals.js"></script>
 </body>
 </html>
