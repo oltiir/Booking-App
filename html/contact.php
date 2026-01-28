@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,8 +46,12 @@
     </div>
 
     <div class="right-section">
-        <a href="../html/login.php" class="login-button">Log In</a>
-    </div>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <a href="logout.php" class="login-button" style="background-color: #ff4757;">Log Out</a>
+            <?php else: ?>
+                <a href="login.php" class="login-button">Log In</a>
+            <?php endif; ?>
+        </div>
 </div>
 
 <section class="contact-hero">

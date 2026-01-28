@@ -38,7 +38,14 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
         <div class="right-section">
-            <a href="../html/login.php" class="login-button" >Log In</a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <span style="margin-right: 15px; color: #d8582a; ">
+                    Hi, <?php echo htmlspecialchars($_SESSION['email']); ?>
+                </span>
+                <a href="logout.php" class="login-button" style="background-color: #ff4757;">Log Out</a>
+            <?php else: ?>
+                <a href="login.php" class="login-button">Log In</a>
+            <?php endif; ?>
         </div>
     </div>
 </div>
