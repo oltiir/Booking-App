@@ -1,8 +1,28 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
+include_once '../includes/Database.php';
+include_once '../classes/Message.php';
+
+$db = new Database();
+$conn = $db->getConnection();
+$messageObj = new Message($conn);
+
+$statusMsg = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send_msg'])) {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $msg = trim($_POST['message'] ?? '');
+
+    if (!empty($name) && !empty($email) && !empty($msg)) {
+        if ($messageObj->send($name, $email, $msg)) {
+            $statusMsg = "<p style='color:green;'>Mesazhi u dërgua me sukses!</p>";
+        } else {
+            $statusMsg = "<p style='color:red;'>Gabim gjatë dërgimit.</p>";
+        }
+    } else {
+        $statusMsg = "<p style='color:red;'>Ju lutem plotësoni të gjitha fushat.</p>";
+    }
 }
 ?>
 
@@ -62,29 +82,29 @@ if (!isset($_SESSION['user_id'])) {
 <section class="contact-grid">
     <div class="contact-form">
         <h2>Send a message</h2>
-        <form id="contact-form">
+        <?php echo $statusMsg; ?> <form method="POST" action="">
             <div class="contact-field">
-                <label for="c_name">Name</label>
-                <input id="c_name" type="text" placeholder="Your full name">
+                <label">Name</label>
+                <input name= "name" id="c_name" type="text" placeholder="Your full name" required>
             </div>
 
             <div class="contact-field">
-                <label for="c_email">Email</label>
-                <input id="c_email" type="email" placeholder="you@example.com">
+                <label>Email</label>
+                <input name="email" id="c_email" type="email" placeholder="you@example.com" required>
             </div>
 
             <div class="contact-field">
-                <label for="c_topic">Topic</label>
-                <input id="c_topic" type="text" placeholder="Tips, billing, app idea">
+                <label>Topic</label>
+                <input name="topic" id="c_topic" type="text" placeholder="Tips, billing, app idea">
             </div>
 
             <div class="contact-field">
-                <label for="c_message">Message</label>
-                <textarea id="c_message" placeholder="Write your message here..."></textarea>
+                <label>Message</label>
+                <textarea name="message" id="c_message" placeholder="Write your message here..." required></textarea>
             </div>
 
             <div class="contact-actions">
-                <button type="submit" class="login-button" style="border: 0;">Send</button>
+                <button name="send_msg" type="submit" class="login-button" style="border: 0;">Send</button>
             </div>
         </form>
     </div>

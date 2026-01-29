@@ -1,9 +1,18 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
+include_once '../includes/Database.php';
+include_once '../classes/Deal.php';
+
+$db = new Database();
+$dealObj = new Deal($db->getConnection());
+
+$allDeals = $dealObj->readAll(); 
+$deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
+
+$sort = $_GET['sort'] ?? 'default';
+$allDeals = $dealObj->readAll($sort); 
+$deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -98,14 +107,33 @@ if (!isset($_SESSION['user_id'])) {
             <option value="beach">Beach</option>
         </select>
 
-        <select id="sortPrice">
-            <option value="default">Sort by</option>
-            <option value="low">Price: Low → High</option>
-            <option value="high">Price: High → Low</option>
+        <select id="sortPrice" onchange="location = this.value;">
+            <option value="deals.php?sort=default" <?php echo $sort == 'default' ? 'selected' : ''; ?>>Sort by</option>
+            <option value="deals.php?sort=low" <?php echo $sort == 'low' ? 'selected' : ''; ?>>Price: Low → High</option>
+            <option value="deals.php?sort=high" <?php echo $sort == 'high' ? 'selected' : ''; ?>>Price: High → Low</option>
         </select>
     </div>
     
-    <div id="dealsGrid" class="deals-grid"></div>
+    <div id="dealsGrid" class="deals-grid">
+        <?php if (count($deals) > 0): ?>
+            <?php foreach ($deals as $deal): ?>
+                <div class="featured-card">
+                    <img src="../images/<?php echo htmlspecialchars($deal['image_url']); ?>" class="featured-image">
+                    <div class="featured-info">
+                        <h3><?php echo htmlspecialchars($deal['title']); ?></h3>
+                        <p><?php echo htmlspecialchars($deal['description']); ?></p>
+                        <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
+                        
+                        <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
+                            Postuar nga: <?php echo htmlspecialchars($deal['admin_name']); ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p style="grid-column: 1 / -1; text-align: center; padding: 50px;">Nuk ka oferta në databazë për momentin.</p>
+        <?php endif; ?>
+    </div>
     <section class="featured-section" style="background:#fff3ee; border-radius:16px;">
         <h2 style="text-align: center;">⏳ Last-Minute Deals</h2>
         <p style="color:#666;">
@@ -250,6 +278,6 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
 
-<script src="../js/deals.js"></script>
+<!-- <script src="../js/deals.js"></script> -->
 </body>
 </html>
