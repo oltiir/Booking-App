@@ -228,17 +228,17 @@ if (!isset($_SESSION['user_id'])) {
         <div class="footer-content">
             <div class="footer-brand">
                 <img src="../images/udhes.png" alt="Udhës logo" class="footer-logo">
-                <p class="footer-motto">Accommodations and stays tailored to your next journey.</p>
+                <p class="footer-motto">Accommodations and stays tailored to your next journey!</p>
             </div>
 
             <div class="footer-section">
-                <a href="../html/contact.php"><h2>Support</h2></a>
+                <a href="../html/about.php" style="text-decoration: none;"><h2>About Us</h2></a>
                 <p>Help Center</p>
                 <p>Safety information</p>
             </div>
 
             <div class="footer-section">
-                <a href="../html/contact.php"  class="contact-btn"><h2>Contact Us Here</h2></a>
+                <a href="../html/contact.php"  class="contact-btn" style="text-decoration: none;"><h2>Contact Us Here</h2></a>
                 <p>Email: support@udhes.com</p>
                 <p>Phone: +383 45 000 000</p>
             </div>
