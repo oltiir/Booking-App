@@ -15,13 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email    = trim($_POST['contact'] ?? '');        
     $password = $_POST['signupPassword'] ?? '';     
 
-    if (empty($name) || empty($surname) || empty($email) || empty($password)) {
-        echo "<p style='color:red; text-align:center;'>Plotëso të gjitha fushat!</p>";
-    } elseif ($user->register($name, $surname, $email, $password)) {
-        header("Location: login.php");
-        exit;
+    $validationErrors = $user->validate($name, $surname, $email, $password);
+
+    if (empty($validationErrors)) {
+        if ($user->register($name, $surname, $email, $password)) {
+            header("Location: login.php");
+            exit;
+        } else {
+            echo "<p style='color:red; text-align:center;'>Gabim gjatë regjistrimit!</p>";
+        }
     } else {
-        echo "<p style='color:red; text-align:center;'>Gabim gjatë regjistrimit!</p>";
+        foreach ($validationErrors as $error) {
+            echo "<p style='color:red; text-align:center;'>$error</p>";
+        }
     }
 }
 ?>
