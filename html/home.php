@@ -179,7 +179,7 @@ if (!isset($_SESSION['user_id'])) {
             </div>
 
             <div class="footer-section">
-                <a href="../html/contact.php" style="text-decoration: none;"><h2>Support</h2></a>
+                <a href="../html/about.php" style="text-decoration: none;"><h2>About Us</h2></a>
                 <p>Help Center</p>
                 <p>Safety information</p>
             </div>
