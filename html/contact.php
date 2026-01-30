@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['send_msg'])) {
 
     <div class="right-section">
             <?php if (isset($_SESSION['user_id'])): ?>
-                <a href="logout.php" class="login-button" style="background-color: #ff4757;">Log Out</a>
+                <a href="logout.php" class="login-button" style="background-color: #ff7f50;">Log Out</a>
             <?php else: ?>
                 <a href="login.php" class="login-button">Log In</a>
             <?php endif; ?>

@@ -13,12 +13,17 @@ a {
     margin-top: 0px;
 }
 
-.stats {
+.stats{
+    display: flex;   
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 30px;
     max-width: 1200px;
     margin: 48px auto;
     padding: 0 30px;
     min-width: 160px;
-    justify-items: center;
 }
 
 .stats h1 {
@@ -149,14 +154,13 @@ a {
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 .how-it-works .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
     gap: 30px;
     margin-top: 30px;
 }
 
 .how-it-works strong {
-    font-size: 40px;
+    font-size: clamp(1rem, 3vw, 2.5rem);
     color: #ff7f50;
     text-align: center;
     margin: auto;
@@ -168,94 +172,16 @@ a {
     color: #555;
 }
 
-.seasonal-bars {
-    text-align: center;
-    margin: auto;
-}
-
-.seasonal-title {
-    font-size: 32px;
-    font-weight: 800;
-    color: #ff7f50;
-}
-
-.seasonal-subtitle {
-    font-size: 16px;
-    color: #666;
-}
-
-.seasonal-row {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.season-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 22px 28px;
-    border-radius: 20px;
-
-    background: rgba(255, 127, 80, 0.12);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    transition: background 0.25s ease, transform 0.25s ease;
-}
-
-.season-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-}
-
-.season-text h3 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 700;
-    color: #111;
-    line-height: 1.3;
-}
-
-.season-text p {
-    margin: 8px auto 0 0;
-    font-size: 15px;
-    color: #444;
-    line-height: 1.5;
-    max-width: 520px;
-}
-
-.season-btn {
-    background: #ff7f50;
-    color: white;
-    border: none;
-    border-radius: 999px;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.season-bar:hover {
-    background: rgba(255, 127, 80, 0.18);
-    transform: translateY(-2px);
-}
-
-.season-bar:hover .season-btn {
-    background: #ff6a3c;
-    transform: translateY(-1px);
-}
-
 .deals-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.description p{
+    font-size: 10px;
+    justify-content: left;
 }
 
 .deal-card {
@@ -346,7 +272,6 @@ a {
 
 .featured-section p {
     margin: 25px;
-    font-size: 16px;
     color: #666666;
     text-align: center;
 }

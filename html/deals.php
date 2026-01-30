@@ -55,10 +55,10 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="right-section">
             <?php if (isset($_SESSION['user_id'])): ?>
-                <span style="margin-right: 15px; color: #d8582a; ">
+                <span style="margin-right: 15px; color: #ff7f50; ">
                     Hi, <?php echo htmlspecialchars($_SESSION['email']); ?>
                 </span>
-                <a href="logout.php" class="login-button" style="background-color: #ff4757;">Log Out</a>
+                <a href="logout.php" class="login-button" style="background-color: #ff7f50;">Log Out</a>
             <?php else: ?>
                 <a href="login.php" class="login-button">Log In</a>
             <?php endif; ?>
@@ -76,28 +76,28 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
     </div>   
 </section>
 
-<section class="stats">
-    <div style="display:flex; gap:40px; flex-wrap:wrap; text-align:center;">
-        <div>
+<section class="stats-container">
+    <div class="stats">
+        <div class="numeric-stats">
             <h1>10,000+</h1>
             <p>Happy travelers</p>
         </div>
-        <div>
+        <div class="numeric-stats">
             <h1>500+</h1>
             <p>Verified deals</p>
         </div>
-        <div>
+        <div class="numeric-stats">
             <h1>30+</h1>
             <p>Countries covered</p>
         </div>
-        <div>
+        <div class="numeric-stats">
             <h1>24/7</h1>
             <p>Customer support</p>
         </div>
     </div>
 </section>
 
-<section class="featured-section">
+<section class="featured-deals">
     <h2>Find the Best Deal for You</h2>
 
     <div class="controls">
@@ -121,7 +121,7 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
                     <img src="../images/<?php echo htmlspecialchars($deal['image_url']); ?>" class="featured-image">
                     <div class="featured-info">
                         <h3><?php echo htmlspecialchars($deal['title']); ?></h3>
-                        <p><?php echo htmlspecialchars($deal['description']); ?></p>
+                        <p class="description"><?php echo htmlspecialchars($deal['description']); ?></p>
                         <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
                         
                         <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
@@ -134,6 +134,7 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
             <p style="grid-column: 1 / -1; text-align: center; padding: 50px;">Nuk ka oferta në databazë për momentin.</p>
         <?php endif; ?>
     </div>
+
     <section class="featured-section" style="background:#fff3ee; border-radius:16px;">
         <h2 style="text-align: center;">⏳ Last-Minute Deals</h2>
         <p style="color:#666;">
@@ -143,39 +144,6 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
             Average savings: 20-40%
         </p>
     </section>
-</section>
-
-<section class="featured-section seasonal-bars">
-    <h2 class="seasonal-title">Seasonal Offers</h2>
-    <p class="seasonal-subtitle">
-        Carefully curated deals for the best time to travel.
-    </p>
-
-    <div class="seasonal-row">
-        <div class="season-bar">
-            <div class="season-text">
-                <h3>Summer Escapes</h3>
-                <p>Beach resorts and islands with up to 35% off.</p>
-            </div>
-            <button class="season-btn">Learn more</button>
-        </div>
-
-        <div class="season-bar">
-            <div class="season-text">
-                <h3>Spring City Breaks</h3>
-                <p>Flexible bookings with free cancellation.</p>
-            </div>
-            <button class="season-btn">Learn more</button>
-        </div>
-
-        <div class="season-bar">
-            <div class="season-text">
-                <h3>Winter Wellness</h3>
-                <p>Spa hotels, mountain retreats, and cozy stays.</p>
-            </div>
-            <button class="season-btn">Learn more</button>
-        </div>
-    </div>
 </section>
 
 <section class="featured-section how-it-works">
