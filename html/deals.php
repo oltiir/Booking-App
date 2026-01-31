@@ -55,7 +55,7 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="right-section">
             <?php if (isset($_SESSION['user_id'])): ?>
-                <span style="margin-right: 15px; color: #ff7f50; ">
+                <span class="user-greeting" style="margin-right: 15px; color: #ff7f50; ">
                     Hi, <?php echo htmlspecialchars($_SESSION['email']); ?>
                 </span>
                 <a href="logout.php" class="login-button" style="background-color: #ff7f50;">Log Out</a>

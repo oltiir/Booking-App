@@ -18,7 +18,7 @@ body {
 }
 
 #logo {
-    width: 90px;
+    width: 85px;
 }
 
 
@@ -33,6 +33,7 @@ body {
 .middle-section {
     min-width: 295px;
     position: absolute;
+    justify-content: center;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -84,14 +85,6 @@ body {
 
 .middle-button a {
     color: white;
-}
-
-@media (max-width: 600px) {
-    .middle-section {
-        margin-top: 150px;
-        margin-right: 70px;
-        margin-left: 0px;
-    }
 }
 
 *{
@@ -385,4 +378,26 @@ h2 {
     align-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+@media (max-width: 890px) {
+    .user-greeting {
+        display: none;
+    }
+}
+
+@media (max-width: 590px) {
+    .middle-button {
+        font-size: 0;
+        padding: 8px;
+    }
+    
+    .middle-button label {
+        display: none;
+    }
+
+    .middle-button img {
+        margin-right: 0;
+        height: 24px;
+    }
 }
