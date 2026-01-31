@@ -208,6 +208,7 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     background-color: white;
     cursor: pointer;
+    min-width: 300px;
 }
 
 .featured-image {
@@ -229,6 +230,7 @@ body {
 .featured-section p {
     font-size: 14px;
     color: #595959;
+    font-weight: 200;
 }
 
 .deals-title a {
@@ -295,15 +297,18 @@ body {
     margin-top: 40px;
     font-size: 16px;
     color: #595959;
+    font-weight: 200;
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1130px;
     margin: 0 auto 16px auto;
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
 }
+
+
 
 .footer-brand {
     flex: 1 1 260px;
@@ -322,6 +327,12 @@ body {
 .footer-section {
     flex: 1 1 160px;
 }
+
+.footer-section p, .footer-section h2{
+    text-align: left;
+}
+
+
 .footer-section h2{
     color: chocolate;
 }
@@ -352,11 +363,26 @@ h2 {
 }
 
 .featured-section h1,
-.featured-section h2 {
-    margin-bottom: 25px;
+.featured-section h2,
+.featured-deals h2{
     font-size: 25px;
+    color: #ff7f50;
 }
 
-.featured-section, .featured-deals h2 {
-    color: #ff7f50;
+.last-minute-deals {
+    display: block;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 30px;
+    background:#fff3ee;
+    border-radius:16px;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.last-minute {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
