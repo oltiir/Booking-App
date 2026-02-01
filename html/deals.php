@@ -55,10 +55,10 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="right-section">
             <?php if (isset($_SESSION['user_id'])): ?>
-                <span style="margin-right: 15px; color: #d8582a; ">
+                <span class="user-greeting" style="margin-right: 15px; color: #ff7f50; ">
                     Hi, <?php echo htmlspecialchars($_SESSION['email']); ?>
                 </span>
-                <a href="logout.php" class="login-button" style="background-color: #ff4757;">Log Out</a>
+                <a href="logout.php" class="login-button" style="background-color: #ff7f50;">Log Out</a>
             <?php else: ?>
                 <a href="login.php" class="login-button">Log In</a>
             <?php endif; ?>
@@ -76,129 +76,106 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
     </div>   
 </section>
 
-<section class="stats">
-    <div style="display:flex; gap:40px; flex-wrap:wrap; text-align:center;">
-        <div>
-            <h1>10,000+</h1>
-            <p>Happy travelers</p>
+<section class="page-body">
+    <section class="stats-container">
+        <div class="stats">
+            <div class="numeric-stats">
+                <h1>10,000+</h1>
+                <p>Happy travelers</p>
+            </div>
+            <div class="numeric-stats">
+                <h1>500+</h1>
+                <p>Verified deals</p>
+            </div>
+            <div class="numeric-stats">
+                <h1>30+</h1>
+                <p>Countries covered</p>
+            </div>
+            <div class="numeric-stats">
+                <h1>24/7</h1>
+                <p>Customer support</p>
+            </div>
         </div>
-        <div>
-            <h1>500+</h1>
-            <p>Verified deals</p>
-        </div>
-        <div>
-            <h1>30+</h1>
-            <p>Countries covered</p>
-        </div>
-        <div>
-            <h1>24/7</h1>
-            <p>Customer support</p>
-        </div>
-    </div>
-</section>
-
-<section class="featured-section">
-    <h2>Find the Best Deal for You</h2>
-
-    <div class="controls">
-        <select id="filterCategory">
-            <option value="all">All categories</option>
-            <option value="city">City Break</option>
-            <option value="beach">Beach</option>
-        </select>
-
-        <select id="sortPrice" onchange="location = this.value;">
-            <option value="deals.php?sort=default" <?php echo $sort == 'default' ? 'selected' : ''; ?>>Sort by</option>
-            <option value="deals.php?sort=low" <?php echo $sort == 'low' ? 'selected' : ''; ?>>Price: Low → High</option>
-            <option value="deals.php?sort=high" <?php echo $sort == 'high' ? 'selected' : ''; ?>>Price: High → Low</option>
-        </select>
-    </div>
-    
-    <div id="dealsGrid" class="deals-grid">
-        <?php if (count($deals) > 0): ?>
-            <?php foreach ($deals as $deal): ?>
-                <div class="featured-card">
-                    <img src="../images/<?php echo htmlspecialchars($deal['image_url']); ?>" class="featured-image">
-                    <div class="featured-info">
-                        <h3><?php echo htmlspecialchars($deal['title']); ?></h3>
-                        <p><?php echo htmlspecialchars($deal['description']); ?></p>
-                        <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
-                        
-                        <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
-                            Postuar nga: <?php echo htmlspecialchars($deal['admin_name']); ?>
-                        </p>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <p style="grid-column: 1 / -1; text-align: center; padding: 50px;">Nuk ka oferta në databazë për momentin.</p>
-        <?php endif; ?>
-    </div>
-    <section class="featured-section" style="background:#fff3ee; border-radius:16px;">
-        <h2 style="text-align: center;">⏳ Last-Minute Deals</h2>
-        <p style="color:#666;">
-            These deals expire soon. Prices may increase at any time.
-        </p>
-        <p style="font-weight:bold; color:#ff7f50;">
-            Average savings: 20-40%
-        </p>
     </section>
-</section>
 
-<section class="featured-section seasonal-bars">
-    <h2 class="seasonal-title">Seasonal Offers</h2>
-    <p class="seasonal-subtitle">
-        Carefully curated deals for the best time to travel.
-    </p>
-
-    <div class="seasonal-row">
-        <div class="season-bar">
-            <div class="season-text">
-                <h3>Summer Escapes</h3>
-                <p>Beach resorts and islands with up to 35% off.</p>
+    <section class="featured-deals">
+        <div class="deals-container">
+            <div class="deals-title">
+                <h2>Find the Best Deal for You</h2>
             </div>
-            <button class="season-btn">Learn more</button>
-        </div>
 
-        <div class="season-bar">
-            <div class="season-text">
-                <h3>Spring City Breaks</h3>
-                <p>Flexible bookings with free cancellation.</p>
-            </div>
-            <button class="season-btn">Learn more</button>
-        </div>
+            <div class="controls">
+                <select id="filterCategory">
+                    <option value="all">All categories</option>
+                    <option value="city">City Break</option>
+                    <option value="beach">Beach</option>
+                </select>
 
-        <div class="season-bar">
-            <div class="season-text">
-                <h3>Winter Wellness</h3>
-                <p>Spa hotels, mountain retreats, and cozy stays.</p>
+                <select id="sortPrice" onchange="location = this.value;">
+                    <option value="deals.php?sort=default" <?php echo $sort == 'default' ? 'selected' : ''; ?>>Sort by</option>
+                    <option value="deals.php?sort=low" <?php echo $sort == 'low' ? 'selected' : ''; ?>>Price: Low → High</option>
+                    <option value="deals.php?sort=high" <?php echo $sort == 'high' ? 'selected' : ''; ?>>Price: High → Low</option>
+                </select>
             </div>
-            <button class="season-btn">Learn more</button>
         </div>
-    </div>
+            
+            <div class="deals-grid">
+                <?php if (count($deals) > 0): ?>
+                    <?php foreach ($deals as $deal): ?>
+                        <div class="featured-card">
+                            <img src="../images/<?php echo htmlspecialchars($deal['image_url']); ?>" class="featured-image">
+                            <div class="featured-info">
+                                <h3><?php echo htmlspecialchars($deal['title']); ?></h3>
+                                <p class="description"><?php echo htmlspecialchars($deal['description']); ?></p>
+                                <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
+                                
+                                <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
+                                    Postuar nga: <?php echo htmlspecialchars($deal['admin_name']); ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p style="text-align: center; padding: 50px;">Nuk ka oferta në databazë për momentin.</p>
+                <?php endif; ?>
+            </div>
+
+        <section class="last-minute-deals">
+            <div class="last-minute">
+                <h2>⏳ Last-Minute Deals</h2>
+                <p style="color:#666;">
+                    These deals expire soon. Prices may increase at any time.
+                </p>
+                <p style="color:#ff7f50;">
+                    <b>Average savings: 20-40%<b>
+                </p>
+            </div>
+        </section>
+    </section>
 </section>
 
 <section class="featured-section how-it-works">
     <h2>How Udhës Deals Work</h2>
+    <br>
 
     <div class="steps">
-        <div>
-            <strong>01</strong>
+        <div class="step">
+            <h1>01</h1>
             <p>We negotiate exclusive prices with trusted partners.</p>
         </div>
 
-        <div>
-            <strong>02</strong>
+        <div class="step">
+            <h1>02</h1>
             <p>Each deal is verified using ratings and reviews.</p>
         </div>
 
-        <div>
-            <strong>03</strong>
+        <div class="step">
+            <h1>03</h1>
             <p>You book securely with transparent pricing.</p>
         </div>
 
-        <div>
-            <strong>04</strong>
+        <div class="step">
+            <h1>04</h1>
             <p>You save money without sacrificing comfort.</p>
         </div>
     </div>
@@ -207,30 +184,37 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
 
 
 <section class="featured-section">
+    <br>
     <h2>What Travelers Say</h2>
 
-    <div class="featured-grid">
-        <div class="featured-card">
-            <div class="featured-info">
-                <img src="../images/person3.jpg" alt="">
-                <p>“Saved over €200 on a Rome trip. Smooth and simple booking.”</p>
-                <strong>- Arber K.</strong>
+    <div class="comment-section">
+        <div class="comment-card">
+            <div class="comment">
+                <img class="user-image" src="../images/person3.jpg" alt="">
+                <div class="text">
+                    <p>“Saved over €200 on a Rome trip. Smooth and simple booking.”</p>
+                    <strong>Arber K.</strong>
+                </div>
             </div>
         </div>
 
-        <div class="featured-card">
-            <div class="featured-info">
-                <img src="../images/person2.jpg" alt="">
-                <p>“Perfect for spontaneous travel. Found a deal in minutes.”</p>
-                <strong>- Elira M.</strong>
+        <div class="comment-card">
+            <div class="comment">
+                <img class="user-image" src="../images/person2.jpg" alt="">
+                <div class="text">
+                    <p>“Perfect for spontaneous travel. Found a deal in minutes.”</p>
+                    <strong>Elira M.</strong>
+                </div>
             </div>
         </div>
 
-        <div class="featured-card">
-            <div class="featured-info">
-                <img src="../images/person1.jpg" alt="">
-                <p>“Clean UI, honest prices, no surprises.”</p>
-                <strong>- Daniel R.</strong>
+        <div class="comment-card">
+            <div class="comment">
+                <img class="user-image" src="../images/person1.jpg" alt="">
+                <div class="text">
+                    <p>“Clean UI, honest prices, no surprises.”</p>
+                    <strong>Daniel R.</strong>
+                </div>
             </div>
         </div>
     </div>
@@ -249,7 +233,7 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
 <section class="featured-section" style="text-align:center;">
     <h2>Ready to book your next trip?</h2>
     <p style="color:#666;">Explore exclusive deals before they're gone.</p>
-    <a href="login.php" class="login-button">Start With Us</a>
+    <a href="login.php" class="login-button" style="margin-top: 20px;">Start With Us</a>
 </section>
 
     <footer class="site-footer">

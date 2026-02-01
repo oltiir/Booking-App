@@ -39,10 +39,10 @@ if (!isset($_SESSION['user_id'])) {
 
         <div class="right-section">
             <?php if (isset($_SESSION['user_id'])): ?>
-                <span style="margin-right: 15px; color: #d8582a; ">
+                <span class="user-greeting" style="margin-right: 15px; color: #ff7f50; ">
                     Hi, <?php echo htmlspecialchars($_SESSION['email']); ?>
                 </span>
-                <a href="logout.php" class="login-button" style="background-color: #ff4757;">Log Out</a>
+                <a href="logout.php" class="login-button" style="background-color: #ff7f50;">Log Out</a>
             <?php else: ?>
                 <a href="login.php" class="login-button">Log In</a>
             <?php endif; ?>
@@ -69,44 +69,17 @@ if (!isset($_SESSION['user_id'])) {
                     <label>Check-out Date</label>
                     <input type="date" id="checkoutInput">
                 </div>
-                <div class="search-field">
-                    <label>Guests</label>
-                    <input type="number" id="guestsInput" min="1" value="2" size="5">
-                    </div>
-                <button class="search-button" onclick="searchProperties()">Search</button>
+                <div class="search-group-bottom">
+                    <div class="search-field" id="guests-field">
+                        <label>Guests</label>
+                        <input type="number" id="guestsInput" min="1" value="2" size="5">
+                        </div>
+                    <button class="search-button" onclick="searchProperties()">Search</button>
+                </div>
             </div>
         </div> 
     </div>
 
-    <section class="featured-section">
-        <h2>Popular Landmarks to Visit</h2>
-
-        <div class="featured-grid">
-            <div class="featured-card">
-                <img src="../images/eiffeltower.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>The Eiffel Tower</h3>
-                    <p>Paris, France</p>
-                </div>
-            </div>
-
-            <div class="featured-card">
-                <img src="../images/colosseum.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Colosseum</h3>
-                    <p class="location">Rome, Italy</p>
-                </div>
-            </div>
-
-            <div class="featured-card">
-                <img src="../images/acropolis.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Acropolis</h3>
-                    <p>Athens, Greece</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="featured-section">
         <h2>Accomodations For You</h2>

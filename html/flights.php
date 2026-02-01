@@ -39,10 +39,10 @@ if (!isset($_SESSION['user_id'])) {
 
         <div class="right-section">
             <?php if (isset($_SESSION['user_id'])): ?>
-                <span style="margin-right: 15px; color: #d8582a; ">
+                <span class="user-greeting" style="margin-right: 15px; color: #ff7f50; ">
                     Hi, <?php echo htmlspecialchars($_SESSION['email']); ?>
                 </span>
-                <a href="logout.php" class="login-button" style="background-color: #ff4757;">Log Out</a>
+                <a href="logout.php" class="login-button" style="background-color: #ff7f50;">Log Out</a>
             <?php else: ?>
                 <a href="login.php" class="login-button">Log In</a>
             <?php endif; ?>
@@ -66,16 +66,18 @@ if (!isset($_SESSION['user_id'])) {
             </div>
             </div>
             <div class="search-box">
-                <div class="search-field" id="from">
-                    <label>From</label>
-                    <input type="text" id="locationInput" placeholder="Enter Departure">
-                </div>
-                <div class="two-way">
-                    <img src="../images/two-way.png">
-                </div>
-                <div class="search-field">
-                    <label>To</label>
-                    <input type="text" id="locationInput" placeholder="Enter Destination">
+                <div id="from-to">
+                    <div class="search-field" id="from">
+                        <label>From</label>
+                        <input type="text" id="locationInput" placeholder="Enter Departure">
+                    </div>
+                    <div class="two-way">
+                        <img src="../images/two-way.png">
+                    </div>
+                    <div class="search-field" id="to">
+                        <label>To</label>
+                        <input type="text" id="locationInput" placeholder="Enter Destination">
+                    </div>
                 </div>
                 <div class="search-field">
                     <label>Departure Date</label>
@@ -85,11 +87,13 @@ if (!isset($_SESSION['user_id'])) {
                     <label>Return Date</label>
                     <input type="date" id="checkoutInput">
                 </div>
-                <div class="search-field">
-                    <label>Travelers</label>
-                    <input type="number" id="guestsInput" min="1" value="2" size="5">
+                <div class="search-group-bottom">
+                    <div class="search-field" id="travelers">
+                        <label>Travelers</label>
+                        <input type="number" id="guestsInput" min="1" value="2" size="5">
+                    </div>
+                    <button class="search-button" onclick="searchProperties()">Search</button>
                 </div>
-                <button class="search-button" onclick="searchProperties()">Search</button>
             </div>
         </div>
     </div>
