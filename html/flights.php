@@ -122,7 +122,7 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
     <section class="page-body">
         <section class="featured-cards">
             <h2>Accommodations For You</h2>
-            <div class="featured-grid">
+            <div class="featured-grid accomodations">
                 <?php if (count($accommodations) > 0): ?>
                     <?php foreach ($accommodations as $acc): ?>
                         <div class="featured-card">
@@ -148,7 +148,7 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
             <div class="flights-title">
                 <h2>Featured Flights</h2>
             </div>
-            <div class="featured-grid">
+            <div class="featured-grid flights">
                 <?php if (count($flights) > 0): ?>
                     <?php foreach ($flights as $flight): ?>
                         <div class="featured-card">
@@ -179,7 +179,7 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
                     <h2>Hot Deals for You</h2>
                 </div>
                 
-                <div class="deals-grid">
+                <div class="deal-grid">
                     <?php if (count($deals) > 0): ?>
                         <?php foreach ($deals as $deal): ?>
                             <div class="featured-card">
