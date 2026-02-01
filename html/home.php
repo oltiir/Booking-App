@@ -101,89 +101,89 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
         </div> 
     </div>
 
-<section class="page-body">
-    <section class="featured-cards">
-        <h2>Accommodations For You</h2>
-        <div class="featured-grid">
-            <?php if (count($accommodations) > 0): ?>
-                <?php foreach ($accommodations as $acc): ?>
-                    <div class="featured-card">
-                        <img src="../images/<?= htmlspecialchars($acc['image']) ?>" 
-                             class="featured-image" 
-                             alt="<?= htmlspecialchars($acc['name']) ?>">
-                        <div class="featured-info">
-                            <h3><?= htmlspecialchars($acc['name']) ?></h3>
-                            <p class="location"><?= htmlspecialchars($acc['location']) ?></p>
-                            <p class="price">€<?= number_format($acc['price'], 0) ?>/night</p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p style="text-align:center; padding:40px; color:#777;">
-                    No accommodations available right now.
-                </p>
-            <?php endif; ?>
-        </div>
-    </section>
-
-    <section class="featured-cards">
-        <div class="flights-title">
-            <h2>Featured Flights</h2>
-        </div>
-        <div class="featured-grid">
-            <?php if (count($flights) > 0): ?>
-                <?php foreach ($flights as $flight): ?>
-                    <div class="featured-card">
-                        <img src="../images/<?= htmlspecialchars($flight['image']) ?>" 
-                            class="featured-image" 
-                            alt="<?= htmlspecialchars($flight['name']) ?>">
-                        
-                        <div class="featured-info">
-                            <h3><?= htmlspecialchars($flight['name']) ?></h3>
-                            <p class="location"><?= htmlspecialchars($flight['airline']) ?></p>
-                            <p class="ticket-type">
-                                <?= $flight['ticket_type'] === 'round-trip' ? 'Round-trip' : 'One-way' ?>
-                            </p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p style="text-align:center; padding:40px; color:#777;">
-                    No featured flights at the moment.
-                </p>
-            <?php endif; ?>
-        </div>
-    </section>
-
-    <section class="featured-deals">
-        <div class="deals-container">
-            <div class="deals-title">
-                <h2>Hot Deals for You</h2>
-            </div>
-            
-            <div class="deals-grid">
-                <?php if (count($deals) > 0): ?>
-                    <?php foreach ($deals as $deal): ?>
+    <section class="page-body">
+        <section class="featured-cards">
+            <h2>Accommodations For You</h2>
+            <div class="featured-grid accomodations">
+                <?php if (count($accommodations) > 0): ?>
+                    <?php foreach ($accommodations as $acc): ?>
                         <div class="featured-card">
-                            <img src="../images/<?php echo htmlspecialchars($deal['image_url']); ?>" class="featured-image">
+                            <img src="../images/<?= htmlspecialchars($acc['image']) ?>" 
+                                class="featured-image" 
+                                alt="<?= htmlspecialchars($acc['name']) ?>">
                             <div class="featured-info">
-                                <h3><?php echo htmlspecialchars($deal['title']); ?></h3>
-                                <p class="description"><?php echo htmlspecialchars($deal['description']); ?></p>
-                                <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
-                                
-                                <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
-                                    Posted by: <?php echo htmlspecialchars($deal['admin_name']); ?>
+                                <h3><?= htmlspecialchars($acc['name']) ?></h3>
+                                <p class="location"><?= htmlspecialchars($acc['location']) ?></p>
+                                <p class="price">€<?= number_format($acc['price'], 0) ?>/night</p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p style="text-align:center; padding:40px; color:#777;">
+                        No accommodations available right now.
+                    </p>
+                <?php endif; ?>
+            </div>
+        </section>
+
+        <section class="featured-cards">
+            <div class="flights-title">
+                <h2>Featured Flights</h2>
+            </div>
+            <div class="featured-grid flights">
+                <?php if (count($flights) > 0): ?>
+                    <?php foreach ($flights as $flight): ?>
+                        <div class="featured-card">
+                            <img src="../images/<?= htmlspecialchars($flight['image']) ?>" 
+                                class="featured-image" 
+                                alt="<?= htmlspecialchars($flight['name']) ?>">
+                            
+                            <div class="featured-info">
+                                <h3><?= htmlspecialchars($flight['name']) ?></h3>
+                                <p class="location"><?= htmlspecialchars($flight['airline']) ?></p>
+                                <p class="ticket-type">
+                                    <?= $flight['ticket_type'] === 'round-trip' ? 'Round-trip' : 'One-way' ?>
                                 </p>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p style="text-align: center; padding: 50px;">No featured deals at the moment.</p>
+                    <p style="text-align:center; padding:40px; color:#777;">
+                        No featured flights at the moment.
+                    </p>
                 <?php endif; ?>
             </div>
-        </div>
+        </section>
+
+        <section class="featured-deals">
+            <div class="deals-container">
+                <div class="deals-title">
+                    <h2>Hot Deals for You</h2>
+                </div>
+                
+                <div class="deal-grid">
+                    <?php if (count($deals) > 0): ?>
+                        <?php foreach ($deals as $deal): ?>
+                            <div class="featured-card">
+                                <img src="../images/<?php echo htmlspecialchars($deal['image_url']); ?>" class="featured-image">
+                                <div class="featured-info">
+                                    <h3><?php echo htmlspecialchars($deal['title']); ?></h3>
+                                    <p class="description"><?php echo htmlspecialchars($deal['description']); ?></p>
+                                    <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
+                                    
+                                    <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
+                                        Posted by: <?php echo htmlspecialchars($deal['admin_name']); ?>
+                                    </p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <p style="text-align: center; padding: 50px;">No featured deals at the moment.</p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </section>
     </section>
-</section>
     
     <footer class="site-footer">
         <div class="footer-content">
