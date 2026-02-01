@@ -231,6 +231,10 @@ a {
     font-weight: 200;
 }
 
+.featured-section.comment {
+    justify-content: center;
+}
+
 .step {
     text-align: center;
     display: block;

@@ -181,12 +181,10 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </section>
 
-
-
-<section class="featured-section">
-    <br>
-    <h2>What Travelers Say</h2>
-
+<section class="featured-section comments">
+    <div>
+        <h2>What Travelers Say</h2>
+    </div>
     <div class="comment-section">
         <div class="comment-card">
             <div class="comment">

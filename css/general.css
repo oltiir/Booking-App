@@ -234,7 +234,7 @@ body {
 }
 
 .featured-section {
-    display: flex;
+    
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 40px;
@@ -372,12 +372,6 @@ body {
 .featured-info h3 {
     margin: 0;
     font-size: 18px;
-}
-
-.featured-section p {
-    font-size: 14px;
-    color: #595959;
-    font-weight: 200;
 }
 
 .deals-title a {
@@ -721,4 +715,8 @@ h2 {
     color: #ff7f50;
     display: block;
     margin: 20px 0;
+}
+
+.comments-title {
+    display: inline;
 }
