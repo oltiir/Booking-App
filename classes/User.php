@@ -37,11 +37,9 @@ class User
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
-        // Check if a record exists
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if (password_verify($password, $row['password'])) {
-                // Start the session and store user data
                 session_start();
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['email'] = $row['email'];

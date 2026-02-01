@@ -20,7 +20,7 @@ class Deal {
         $stmt->bindParam(":description", $description);
         $stmt->bindParam(":price", $price);
         $stmt->bindParam(":image_url", $image_url);
-        $stmt->bindParam(":created_by", $created_by); // This is the admin's ID
+        $stmt->bindParam(":created_by", $created_by);
 
         if($stmt->execute()) {
             return true;
@@ -29,7 +29,7 @@ class Deal {
     }
 
     public function readAll($sort = 'default') {
-    $orderBy = "d.id DESC"; // Default: Newest first
+    $orderBy = "d.id DESC";
 
     if ($sort == 'low') {
         $orderBy = "d.price ASC";
