@@ -59,3 +59,24 @@
     border: none;
     padding-right: 0;
 }
+
+#from-to {
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    border-right: 1px solid #e0e0e0;
+}
+
+.search-box .search-field {
+    flex: 1; 
+}
+
+#travelers {
+    flex: 1;
+}
+
+@media (max-width: 810px) {
+    .search-box > .search-field {
+        flex: 1;
+    }
+}
