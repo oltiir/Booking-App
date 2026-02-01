@@ -13,13 +13,6 @@ a {
     margin-top: 0px;
 }
 
-.page-body {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-    justify-content: center;
-}
-
 .stats{
     display: flex;   
     flex-wrap: wrap;
@@ -189,79 +182,9 @@ a {
     color: #555;
 }
 
-.featured-deals{
-    display: fit-content;
-    margin: 0 auto;
-    padding: 0 35px;
-}
-
-.deals-container {
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.deals-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
 .description p{
     font-size: 10px;
     justify-content: left;
-}
-
-.deal-card {
-    background: white;
-    border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-    transition: transform 0.2s, box-shadow 0.2s;
-    overflow: hidden;
-    flex: 0 1 350px;
-}
-
-.deal-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.18);
-}
-
-.deal-image {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.deal-body {
-    padding: 18px;
-}
-
-.deal-meta {
-    color: #666;
-    font-size: 14px;
-    margin-top: 6px;
-}
-
-.deal-bottom {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 14px;
-}
-
-.price {
-    color: #ff7f50;
-    font-weight: bold;
-}
-
-.wishlist {
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.timer {
-    font-size: 13px;
-    color: #999;
-    margin-top: 8px;
 }
 
 .newsletter {
@@ -315,8 +238,4 @@ a {
     align-content: center;
     max-width: 250px;
     min-width: 150px;
-}
-
-h2 {
-    text-align: center;
 }

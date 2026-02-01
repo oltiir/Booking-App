@@ -4,6 +4,27 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
+
+include_once '../includes/Database.php';
+include_once '../classes/Accommodation.php';
+include_once '../classes/Flight.php';
+include_once '../classes/Deal.php';
+
+$db = new Database();
+$conn = $db->getConnection();
+
+$accomObj = new Accommodation($conn);
+$flightObj = new Flight($conn);
+$dealObj = new Deal($conn);
+
+$accomResult = $accomObj->getAllActive();
+$accommodations = $accomResult->fetchAll(PDO::FETCH_ASSOC);
+
+$flightResult = $flightObj->getAllActive();
+$flights = $flightResult->fetchAll(PDO::FETCH_ASSOC);
+
+$allDeals = $dealObj->readAll(); 
+$deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -80,69 +101,89 @@ if (!isset($_SESSION['user_id'])) {
         </div> 
     </div>
 
-
-    <section class="featured-section">
-        <h2>Accomodations For You</h2>
-
+<section class="page-body">
+    <section class="featured-cards">
+        <h2>Accommodations For You</h2>
         <div class="featured-grid">
-            <div class="featured-card">
-                <img src="../images/hotel1.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Hotel Santa Maria</h3>
-                    <p class="location">#6 of 1,150 hotels in Rome, Italy</p>
-                </div>
-            </div>
-
-            <div class="featured-card">
-                <img src="../images/hotel2.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Apanemo Hotel & Suites</h3>
-                    <p class="location">#1 of 21 hotels in Akrotiri, Greece</p>
-                </div>
-            </div>
-
-            <div class="featured-card">
-                <img src="../images/hotel3.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Hotel de Londres Eiffel</h3>
-                    <p class="location">#6 of 1,873 hotels in Paris, France</p>
-                </div>
-            </div>
+            <?php if (count($accommodations) > 0): ?>
+                <?php foreach ($accommodations as $acc): ?>
+                    <div class="featured-card">
+                        <img src="../images/<?= htmlspecialchars($acc['image']) ?>" 
+                             class="featured-image" 
+                             alt="<?= htmlspecialchars($acc['name']) ?>">
+                        <div class="featured-info">
+                            <h3><?= htmlspecialchars($acc['name']) ?></h3>
+                            <p class="location"><?= htmlspecialchars($acc['location']) ?></p>
+                            <p class="price">€<?= number_format($acc['price'], 0) ?>/night</p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p style="text-align:center; padding:40px; color:#777;">
+                    No accommodations available right now.
+                </p>
+            <?php endif; ?>
         </div>
     </section>
 
-    <section class="featured-section">
-        <div class="deals-title">
-            <h2 class="deals-title">Hot Deals for You</h2>
-            <a href="../html/deals.php">See more...</a>
+    <section class="featured-cards">
+        <div class="flights-title">
+            <h2>Featured Flights</h2>
         </div>
-
         <div class="featured-grid">
-            <div class="featured-card">
-                <img src="../images/paris2.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Paris</h3>
-                    <h4 class="price">€129/night</h4>
-                </div>
-            </div>
+            <?php if (count($flights) > 0): ?>
+                <?php foreach ($flights as $flight): ?>
+                    <div class="featured-card">
+                        <img src="../images/<?= htmlspecialchars($flight['image']) ?>" 
+                            class="featured-image" 
+                            alt="<?= htmlspecialchars($flight['name']) ?>">
+                        
+                        <div class="featured-info">
+                            <h3><?= htmlspecialchars($flight['name']) ?></h3>
+                            <p class="location"><?= htmlspecialchars($flight['airline']) ?></p>
+                            <p class="ticket-type">
+                                <?= $flight['ticket_type'] === 'round-trip' ? 'Round-trip' : 'One-way' ?>
+                            </p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p style="text-align:center; padding:40px; color:#777;">
+                    No featured flights at the moment.
+                </p>
+            <?php endif; ?>
+        </div>
+    </section>
 
-            <div class="featured-card">
-                <img src="../images/vienna.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Vienna</h3>
-                    <h4 class="price">€199/night</h4>
-                </div>
+    <section class="featured-deals">
+        <div class="deals-container">
+            <div class="deals-title">
+                <h2>Hot Deals for You</h2>
             </div>
-
-            <div class="featured-card">
-                <img src="../images/istanbul.jpg" class="featured-image">
-                <div class="featured-info">
-                    <h3>Istanbul</h3>
-                    <h4 class="price">€115/night</h4>
-                </div>
+            
+            <div class="deals-grid">
+                <?php if (count($deals) > 0): ?>
+                    <?php foreach ($deals as $deal): ?>
+                        <div class="featured-card">
+                            <img src="../images/<?php echo htmlspecialchars($deal['image_url']); ?>" class="featured-image">
+                            <div class="featured-info">
+                                <h3><?php echo htmlspecialchars($deal['title']); ?></h3>
+                                <p class="description"><?php echo htmlspecialchars($deal['description']); ?></p>
+                                <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
+                                
+                                <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
+                                    Posted by: <?php echo htmlspecialchars($deal['admin_name']); ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p style="text-align: center; padding: 50px;">No featured deals at the moment.</p>
+                <?php endif; ?>
             </div>
         </div>
     </section>
+</section>
     
     <footer class="site-footer">
         <div class="footer-content">

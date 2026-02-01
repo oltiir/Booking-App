@@ -130,13 +130,13 @@ $deals = $allDeals->fetchAll(PDO::FETCH_ASSOC);
                                 <h4 class="price">€<?php echo number_format($deal['price'], 2); ?>/night</h4>
                                 
                                 <p style="font-size: 11px; color: #999; margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px;">
-                                    Postuar nga: <?php echo htmlspecialchars($deal['admin_name']); ?>
+                                    Posted by: <?php echo htmlspecialchars($deal['admin_name']); ?>
                                 </p>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <p style="text-align: center; padding: 50px;">Nuk ka oferta në databazë për momentin.</p>
+                    <p style="text-align: center; padding: 50px;">No featured deals at the moment.</p>
                 <?php endif; ?>
             </div>
 
