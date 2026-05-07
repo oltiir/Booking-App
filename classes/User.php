@@ -11,6 +11,15 @@ class User
 
     public function register($name, $surname, $email, $password)
     {
+        $checkQuery = "SELECT id FROM {$this->table_name} WHERE email = :email";
+        $checkStmt = $this->conn->prepare($checkQuery);
+        $checkStmt->bindParam(':email', $email);
+        $checkStmt->execute();
+
+        if ($checkStmt->rowCount() > 0) {
+            return false;
+        }
+
         $role = 'user';
         $query = "INSERT INTO {$this->table_name} (name, surname, email, password, role) VALUES (:name, :surname, :email, :password, :role)";
         $stmt = $this->conn->prepare($query);

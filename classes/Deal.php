@@ -6,6 +6,7 @@ class Deal {
     public function __construct($db) {
         $this->conn = $db;
     }
+
     public function create($title, $description, $price, $image_url, $created_by) {
         $query = "INSERT INTO " . $this->table_name . " 
                   (title, description, price, image_url, created_by) 
@@ -29,29 +30,29 @@ class Deal {
     }
 
     public function readAll($sort = 'default') {
-    $orderBy = "d.id DESC";
+        $orderBy = "d.id DESC";
 
-    if ($sort == 'low') {
-        $orderBy = "d.price ASC";
-    } elseif ($sort == 'high') {
-        $orderBy = "d.price DESC";
+        if ($sort == 'low') {
+            $orderBy = "d.price ASC";
+        } elseif ($sort == 'high') {
+            $orderBy = "d.price DESC";
+        }
+
+        $query = "SELECT d.*, u.name as admin_name 
+                FROM deals d 
+                LEFT JOIN user u ON d.created_by = u.id 
+                ORDER BY $orderBy";
+                
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
     }
 
-    $query = "SELECT d.*, u.name as admin_name 
-              FROM deals d 
-              LEFT JOIN user u ON d.created_by = u.id 
-              ORDER BY $orderBy";
-              
-    $stmt = $this->conn->prepare($query);
-    $stmt->execute();
-    return $stmt;
-}
-
-public function delete($id) {
-    $query = "DELETE FROM " . $this->table_name . " WHERE id = :id";
-    $stmt = $this->conn->prepare($query);
-    $stmt->bindParam(":id", $id);
-    return $stmt->execute();
-}
+    public function delete($id) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":id", $id);
+        return $stmt->execute();
+    }
 }
 ?>
